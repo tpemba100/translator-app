@@ -44,6 +44,8 @@ body {
 .text-input .to-text {
   border-radius: 0px;
   border-left: 1px solid #bbb;
+  background-color: #f2f1f1;
+  color: #1b1b1b;
 }
 
 /* CONTROLS */
@@ -75,15 +77,26 @@ li,
 }
 
 .controls .icons i {
-  width: 50px;
+  width: 70px;
   color: #9f9f9f;
   font-size: 14px;
   cursor: pointer;
   justify-content: center;
 }
 
+.controls .icons i:hover {
+  color: dodgerblue;
+}
+.controls .exchange i:hover {
+  color: dodgerblue;
+}
+
+.controls .icons i:active {
+  color: dodgerblue;
+}
+
 .controls .row select {
-  border: none;
+  /* border: none; */
   outline: none;
   font-size: 18px;
   background: none;
@@ -107,4 +120,15 @@ li,
   border-radius: 5px;
   outline: none;
   cursor: pointer;
+}
+
+.container button:hover {
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.head {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
 }

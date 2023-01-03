@@ -50,6 +50,39 @@ translateBtn.addEventListener("click", () => {
       toText.value = data.responseData.translatedText;
       toText.setAttribute("placeholder", "Translation..");
     });
+
+  // Will Utter Text once i enter
+  utterance = new SpeechSynthesisUtterance(toText.value);
+  utterance.lang = selectTag[1].value;
+  const synth = window.speechSynthesis;
+  synth.speak(utterance);
+});
+
+fromText.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    let text = fromText.value;
+    let translateFrom = selectTag[0].value; // getting from tag value
+    let translateTo = selectTag[1].value; // getting to tag value
+
+    if (!text) return; //return nothing if the input is empty
+    toText.setAttribute("placeholder", "Translating..");
+    let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
+
+    // fetching API
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toText.value = data.responseData.translatedText;
+        toText.setAttribute("placeholder", "Translation..");
+
+        // Will Utter Text once i enter
+        utterance = new SpeechSynthesisUtterance(toText.value);
+        utterance.lang = selectTag[1].value;
+        const synth = window.speechSynthesis;
+        synth.speak(utterance);
+      });
+  }
 });
 
 icons.forEach((icon) => {
