@@ -7,6 +7,7 @@
 - Language translation in many different language
 - Copy the translated text
 - Listent to the text in speech
+- Exchange the primary language 
 - Either press the button or press enter to translate
 
 ## Filtering the data
