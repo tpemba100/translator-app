@@ -11,7 +11,7 @@
 - Either press the button or press enter to translate
 
 ## Filtering the data
-![caption](translator-app.gif)
+![caption](translator.gif)
 
 ## Technologies
 - HTML
